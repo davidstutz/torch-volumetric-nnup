@@ -21,7 +21,7 @@ Installation instructions roughly follow the
 * Copy `generic/VolumetricUpSamplingNearest.c` into `nnx/generic`.
 * Adapt `init.c` (in `nnx`) to include the following lines:
 
-
+    ```
     // Before function luaopen_libnnx
     #include "generic/VolumetricUpSamplingNearest.c"
     #include "THGenerateFloatTypes.h"
@@ -30,20 +30,22 @@ Installation instructions roughly follow the
     // In function luaopen_libnnx
     nn_FloatVolumetricUpSamplingNearest_init(L);
     nn_DoubleVolumetricUpSamplingNearest_init(L);
-
+    ```
+    
 * Use `luarocks make nnx-0.1-1.rockspec` to build `nnx` including the volumetric
   upsampling module.
 * After cloning `cunnx`, copy `cuda/VolumetricUpSamplingNearest.cu` to
   `cunnx`.
 * Adapt `init.cu`:
 
-
+    ```
     // Before luaopen_libcunnx.
     #include "VolumetricUpSamplingNearest.cu"
     // In luaopen_libcunnx.
     cunn_VolumetricUpSamplingNearest_init(L);
     // NOTE: cunn_ AND NOT cunnx_!
-
+    ```
+    
 * Build `cunnx` using `luarocks make rocks/cunnx-scm-1.rockspec`.
 * Run `th test.lua` to see if everything works correctly.
 
