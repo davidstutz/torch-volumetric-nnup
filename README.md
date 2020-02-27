@@ -6,6 +6,18 @@ In the original repository, the nearest neighbor upsampling did not allow distin
 scaling factors for all three dimensions of the processed volumes; the module in this
 repository changes that.
 
+If you use this tool, please consider citing the following thesis:
+
+    @inproceedings{Stutz2018CVPR,
+      title = {Learning 3D Shape Completion from Laser Scan Data with Weak Supervision},
+      author = {David Stutz and Andreas Geiger},
+      booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+      publisher = {IEEE Computer Society},
+      year = {2018}
+    }
+
+Also check the corresponding [project page](http://davidstutz.de/projects/shape-completion/).
+
 ## Installation
 
 Installation instructions roughly follow the
